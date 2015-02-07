@@ -40,6 +40,7 @@ $(document).ready(function(){
 		$('ul#guessList').empty();
 		feedback.text("Make your Guess!");
 		console.log(randomNum);
+		guess.val('');
 	};
 	function makeGuess (num){
 		function checkGuess (){
@@ -58,7 +59,7 @@ $(document).ready(function(){
 			}else {
 				feedback.text("Cold!");
 			}
-		}
+		};
 		//Convert string to integer
 		num=+num;
 		console.log(num +', '+ typeof num);
