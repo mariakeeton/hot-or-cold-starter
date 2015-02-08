@@ -17,8 +17,7 @@ $(document).ready(function(){
 	var numGuesses = 0;
 	var randomNum = makeRandomNum();
 
-	console.log(randomNum);
-
+	
 	$('#guessButton').click(function() {
 		makeGuess(guess.val());
 	});
@@ -39,12 +38,10 @@ $(document).ready(function(){
 		randomNum = makeRandomNum();
 		$('ul#guessList').empty();
 		feedback.text("Make your Guess!");
-		console.log(randomNum);
 		guess.val('');
 	};
 	function makeGuess (num){
 		function checkGuess (){
-			//console.log('it works');
 			numGuesses++;
 			$('span#count').text(numGuesses);
 			$('ul#guessList').append('<li>' + num + '</li>');
@@ -62,7 +59,6 @@ $(document).ready(function(){
 		};
 		//Convert string to integer
 		num=+num;
-		console.log(num +', '+ typeof num);
 		//If guess isn't a number, prompt user to enter a number
 		if (isNaN(num)) {
 			feedback.text('Please Enter a Number');
