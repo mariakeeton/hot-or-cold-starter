@@ -42,16 +42,17 @@ $(document).ready(function(){
 	};
 	function makeGuess (num){
 		function checkGuess (){
+			var range = Math.abs(num-randomNum);
 			numGuesses++;
 			$('span#count').text(numGuesses);
 			$('ul#guessList').append('<li>' + num + '</li>');
 			if (num === randomNum) {
 				feedback.text("Correct!");	
-			}else if (((num >= randomNum-5) && (num < randomNum)) ||  ((num <= randomNum+5) && (num > randomNum)) ) {
+			}else if (range <=5  ) {
 			feedback.text("Hot!");
-			}else if (((num >= randomNum-15) && (num < randomNum-5)) ||  ((num <= randomNum+15) && (num > randomNum+5))) {
+			}else if (range >= 6 && range <= 16) {
 				feedback.text("Warm");
-			}else if (((num >= randomNum-35) && (num < randomNum-15)) ||  ((num <= randomNum+35) && (num > randomNum+15))) {
+			}else if (range >= 17 && range <= 37) {
 				feedback.text("Cool");
 			}else {
 				feedback.text("Cold!");
